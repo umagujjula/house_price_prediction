@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+
+    <style>
+        body {
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            background-color: white;
+            margin: 60px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #d6336c;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #d6336c;
+        }
+
+        button {
+            width: 95%;
+            padding: 12px;
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #a61e4d;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>House Price Prediction</h1>
+
+    <form action="/predict" method="post">
+        <input type="text" name="Area" placeholder="Area">
+        <input type="text" name="number_of_bed_rooms" placeholder="Number of Bed Rooms">
+        <input type="text" name="number_of_bath_rooms" placeholder="Number of Bath Rooms">
+        <input type="text" name="mainroad" placeholder="Main Road (Yes=1, No=0)">
+        <input type="text" name="guestroom" placeholder="Guest Room (Yes=1, No=0)">
+        <input type="text" name="basement" placeholder="Basement (Yes=1, No=0)">
+
+        <button type="submit">Predict House Price</button>
+    </form>
+
+    <h3><strong>Prediction = {{ house_price_prediction_value }}</strong></h3>
+
+    <div class="footer">
+        <h2>PROJECT BY UMA</h2>
+        <p>DATA SCIENTIST</p>
+    </div>
+</div>
+
+</body>
+</html>
+
